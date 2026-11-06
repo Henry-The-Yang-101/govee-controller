@@ -1,0 +1,561 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01E97AD950C243C84319614A /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2054AE643BF4170EF572F /* SharedStore.swift */; };
+		0F44433DDCEF3B70058CB3EE /* GoveeControllerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E576152E09768AB026064D2 /* GoveeControllerApp.swift */; };
+		1ADE5496C05AFA169889402D /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2054AE643BF4170EF572F /* SharedStore.swift */; };
+		2770FCA635E7D4988525D600 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1850A674C76ABF96169A5A /* Models.swift */; };
+		3031A3726C3346F2FE75BD74 /* GoveeControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B173A8D8D01D78AA51682D /* GoveeControls.swift */; };
+		32A7898EF77092844797E4E5 /* GoveeControls.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 908362BA99B26E909FC50D3A /* GoveeControls.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		36503381B2F9F49B92F6F2DA /* GoveeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA97A617ECCF7F6A8BC8533 /* GoveeClient.swift */; };
+		3B69DB9B870044FCB1EAA212 /* MenuPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919BE2D472048A914867AF3D /* MenuPanel.swift */; };
+		3CA224CFBAA0723CB2B30BF1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1850A674C76ABF96169A5A /* Models.swift */; };
+		3E9CE83A587E7B9E360B4CEF /* Diagnostics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B703D3A5765F12C4BA1E8652 /* Diagnostics.swift */; };
+		3FCA64C403C3C52B11273C88 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B7F2CD43AA1F60103E362 /* Keychain.swift */; };
+		49ABA7733DF4ACA4029A174D /* GoveeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA97A617ECCF7F6A8BC8533 /* GoveeClient.swift */; };
+		4D9974EF7189E118490E0302 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E4729415CDBE7A8B2134393 /* Cocoa.framework */; };
+		5393EE5E25F2C1F6517BE3CC /* LightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4955C1DBD33544CC0DFB4564 /* LightModel.swift */; };
+		5EDA78169A4C7ADD40E3179C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 785D724BDE7C2A6ADF0E8538 /* Assets.xcassets */; };
+		9BFE9D43D6B983B2903F3531 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61CF76C1A9491677EDB6BED /* SettingsView.swift */; };
+		9E0F5345D354AF97712D2F7D /* LightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECBCBA7BA425743178A121D /* LightService.swift */; };
+		BA00FB6794CEC63A462F536C /* PowerIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F31C9C20E5B63EDC3212F /* PowerIntent.swift */; };
+		CA80B1783CEFD0FC0C3C0558 /* PowerIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F31C9C20E5B63EDC3212F /* PowerIntent.swift */; };
+		DCDF2EC24DA8D227164DD2A9 /* LightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECBCBA7BA425743178A121D /* LightService.swift */; };
+		E9DCB29F473521FC10F82974 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E4729415CDBE7A8B2134393 /* Cocoa.framework */; };
+		F633F16E060AD69FA3BF06AA /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B7F2CD43AA1F60103E362 /* Keychain.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F5C12BB20B9F25946BC1FEAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 378894D768FAB1296373E7E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1145FC0DB188E07A64A793EC;
+			remoteInfo = GoveeControls;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		66E93412A2C1D04C4483BD0E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				32A7898EF77092844797E4E5 /* GoveeControls.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0E576152E09768AB026064D2 /* GoveeControllerApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GoveeControllerApp.swift; sourceTree = "<group>"; };
+		1E4729415CDBE7A8B2134393 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		3A85D4DB9B442BDED9C2782B /* GoveeController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoveeController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ECBCBA7BA425743178A121D /* LightService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LightService.swift; sourceTree = "<group>"; };
+		439F31C9C20E5B63EDC3212F /* PowerIntent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PowerIntent.swift; sourceTree = "<group>"; };
+		4955C1DBD33544CC0DFB4564 /* LightModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LightModel.swift; sourceTree = "<group>"; };
+		4A1850A674C76ABF96169A5A /* Models.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		5CA97A617ECCF7F6A8BC8533 /* GoveeClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GoveeClient.swift; sourceTree = "<group>"; };
+		6CF2054AE643BF4170EF572F /* SharedStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SharedStore.swift; sourceTree = "<group>"; };
+		785D724BDE7C2A6ADF0E8538 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
+		908362BA99B26E909FC50D3A /* GoveeControls.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GoveeControls.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		919BE2D472048A914867AF3D /* MenuPanel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MenuPanel.swift; sourceTree = "<group>"; };
+		B1B173A8D8D01D78AA51682D /* GoveeControls.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GoveeControls.swift; sourceTree = "<group>"; };
+		B61CF76C1A9491677EDB6BED /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B703D3A5765F12C4BA1E8652 /* Diagnostics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Diagnostics.swift; sourceTree = "<group>"; };
+		D86B7F2CD43AA1F60103E362 /* Keychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		41958B3D06FD8A7F9B5B941C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9DCB29F473521FC10F82974 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D94F7357C1AA1BD88BCDDE7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D9974EF7189E118490E0302 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		139301DFD6479A31C58B31B6 /* Sources/Core */ = {
+			isa = PBXGroup;
+			children = (
+				5CA97A617ECCF7F6A8BC8533 /* GoveeClient.swift */,
+				4A1850A674C76ABF96169A5A /* Models.swift */,
+			);
+			name = Sources/Core;
+			path = Sources/Core;
+			sourceTree = "<group>";
+		};
+		673F4C0F87741822617E7DE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A85D4DB9B442BDED9C2782B /* GoveeController.app */,
+				908362BA99B26E909FC50D3A /* GoveeControls.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C3039799BDE594639A9F5E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA3001EB070D9EE7C47D23BA /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B785A796A6EDD6F6A1A7C6F5 /* Sources/Controls */ = {
+			isa = PBXGroup;
+			children = (
+				B1B173A8D8D01D78AA51682D /* GoveeControls.swift */,
+			);
+			name = Sources/Controls;
+			path = Sources/Controls;
+			sourceTree = "<group>";
+		};
+		C4CBD4024CC44573D096A689 = {
+			isa = PBXGroup;
+			children = (
+				673F4C0F87741822617E7DE6 /* Products */,
+				9C3039799BDE594639A9F5E5 /* Frameworks */,
+				EDDB31CC339836FED2310977 /* Sources/App */,
+				B785A796A6EDD6F6A1A7C6F5 /* Sources/Controls */,
+				139301DFD6479A31C58B31B6 /* Sources/Core */,
+				E5D53033A0D3ACF5BB218B02 /* Sources/Shared */,
+				785D724BDE7C2A6ADF0E8538 /* Assets.xcassets */,
+			);
+			sourceTree = "<group>";
+		};
+		E5D53033A0D3ACF5BB218B02 /* Sources/Shared */ = {
+			isa = PBXGroup;
+			children = (
+				D86B7F2CD43AA1F60103E362 /* Keychain.swift */,
+				3ECBCBA7BA425743178A121D /* LightService.swift */,
+				439F31C9C20E5B63EDC3212F /* PowerIntent.swift */,
+				6CF2054AE643BF4170EF572F /* SharedStore.swift */,
+			);
+			name = Sources/Shared;
+			path = Sources/Shared;
+			sourceTree = "<group>";
+		};
+		EA3001EB070D9EE7C47D23BA /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				1E4729415CDBE7A8B2134393 /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		EDDB31CC339836FED2310977 /* Sources/App */ = {
+			isa = PBXGroup;
+			children = (
+				B703D3A5765F12C4BA1E8652 /* Diagnostics.swift */,
+				0E576152E09768AB026064D2 /* GoveeControllerApp.swift */,
+				4955C1DBD33544CC0DFB4564 /* LightModel.swift */,
+				919BE2D472048A914867AF3D /* MenuPanel.swift */,
+				B61CF76C1A9491677EDB6BED /* SettingsView.swift */,
+			);
+			name = Sources/App;
+			path = Sources/App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1145FC0DB188E07A64A793EC /* GoveeControls */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7D48BE1DA8CA40F65F26101 /* Build configuration list for PBXNativeTarget "GoveeControls" */;
+			buildPhases = (
+				5AF4BB8000B880889E064C80 /* Sources */,
+				41958B3D06FD8A7F9B5B941C /* Frameworks */,
+				681D815F8C495926E0CFF057 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoveeControls;
+			productName = GoveeControls;
+			productReference = 908362BA99B26E909FC50D3A /* GoveeControls.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		53DC4869A28B8871AAC1AE27 /* GoveeController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B2EA98B3F9D67A045BCB39B /* Build configuration list for PBXNativeTarget "GoveeController" */;
+			buildPhases = (
+				25CCD761003C7192005C0D58 /* Sources */,
+				D94F7357C1AA1BD88BCDDE7C /* Frameworks */,
+				0D0240A617DBEE54A538E0B1 /* Resources */,
+				66E93412A2C1D04C4483BD0E /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD8A4F1F87DC12C37AE1009C /* PBXTargetDependency */,
+			);
+			name = GoveeController;
+			productName = GoveeController;
+			productReference = 3A85D4DB9B442BDED9C2782B /* GoveeController.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		378894D768FAB1296373E7E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 175DA70FC2350CE31B9C41BC /* Build configuration list for PBXProject "GoveeController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C4CBD4024CC44573D096A689;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 673F4C0F87741822617E7DE6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				53DC4869A28B8871AAC1AE27 /* GoveeController */,
+				1145FC0DB188E07A64A793EC /* GoveeControls */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D0240A617DBEE54A538E0B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EDA78169A4C7ADD40E3179C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		681D815F8C495926E0CFF057 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		25CCD761003C7192005C0D58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E9CE83A587E7B9E360B4CEF /* Diagnostics.swift in Sources */,
+				0F44433DDCEF3B70058CB3EE /* GoveeControllerApp.swift in Sources */,
+				5393EE5E25F2C1F6517BE3CC /* LightModel.swift in Sources */,
+				3B69DB9B870044FCB1EAA212 /* MenuPanel.swift in Sources */,
+				9BFE9D43D6B983B2903F3531 /* SettingsView.swift in Sources */,
+				36503381B2F9F49B92F6F2DA /* GoveeClient.swift in Sources */,
+				2770FCA635E7D4988525D600 /* Models.swift in Sources */,
+				F633F16E060AD69FA3BF06AA /* Keychain.swift in Sources */,
+				9E0F5345D354AF97712D2F7D /* LightService.swift in Sources */,
+				BA00FB6794CEC63A462F536C /* PowerIntent.swift in Sources */,
+				01E97AD950C243C84319614A /* SharedStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AF4BB8000B880889E064C80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3031A3726C3346F2FE75BD74 /* GoveeControls.swift in Sources */,
+				49ABA7733DF4ACA4029A174D /* GoveeClient.swift in Sources */,
+				3CA224CFBAA0723CB2B30BF1 /* Models.swift in Sources */,
+				3FCA64C403C3C52B11273C88 /* Keychain.swift in Sources */,
+				DCDF2EC24DA8D227164DD2A9 /* LightService.swift in Sources */,
+				CA80B1783CEFD0FC0C3C0558 /* PowerIntent.swift in Sources */,
+				1ADE5496C05AFA169889402D /* SharedStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD8A4F1F87DC12C37AE1009C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GoveeControls;
+			target = 1145FC0DB188E07A64A793EC /* GoveeControls */;
+			targetProxy = F5C12BB20B9F25946BC1FEAE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		40FD6825CC285CA45FE4C00C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Config/App.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8TB23NN2NM;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Config/App-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.henryyang.GoveeController;
+				PRODUCT_NAME = "Govee Controller";
+				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		6EE468896D18BEEFC2CEF1C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Config/Controls.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8TB23NN2NM;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Config/Controls-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.henryyang.GoveeController.Controls;
+				PRODUCT_NAME = GoveeControls;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		9C77E93D362749CBC31D4CFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		BBC81AAC45692E0A28A018B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		CEB54F5990B1DAED5B69AA50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Config/Controls.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8TB23NN2NM;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Config/Controls-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.henryyang.GoveeController.Controls;
+				PRODUCT_NAME = GoveeControls;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		F330D1AF4E02698FD78BC5FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Config/App.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8TB23NN2NM;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Config/App-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.henryyang.GoveeController;
+				PRODUCT_NAME = "Govee Controller";
+				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		175DA70FC2350CE31B9C41BC /* Build configuration list for PBXProject "GoveeController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C77E93D362749CBC31D4CFA /* Debug */,
+				BBC81AAC45692E0A28A018B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B2EA98B3F9D67A045BCB39B /* Build configuration list for PBXNativeTarget "GoveeController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40FD6825CC285CA45FE4C00C /* Release */,
+				F330D1AF4E02698FD78BC5FF /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7D48BE1DA8CA40F65F26101 /* Build configuration list for PBXNativeTarget "GoveeControls" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EE468896D18BEEFC2CEF1C4 /* Release */,
+				CEB54F5990B1DAED5B69AA50 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 378894D768FAB1296373E7E4 /* Project object */;
+}
