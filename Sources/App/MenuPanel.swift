@@ -2,7 +2,7 @@ import SwiftUI
 
 struct MenuPanel: View {
     @Bindable var model: LightModel
-    @State private var visible = false
+    let openSettings: () -> Void
     private let swatches: [(String, Int)] = [
         ("Amber", 0xFF9D38), ("Rose", 0xFF527A), ("Violet", 0x9E62FF),
         ("Blue", 0x368DFF), ("Mint", 0x39D9A0), ("White", 0xFFFFFF)
@@ -17,7 +17,7 @@ struct MenuPanel: View {
                         .font(.headline)
                     Text("Add your Govee API key to get started.")
                         .foregroundStyle(.secondary)
-                    SettingsLink { Text("Open Settings") }
+                    Button("Open Settings", action: openSettings)
                         .buttonStyle(.borderedProminent)
                 }
             } else if let device = model.device {
@@ -61,19 +61,6 @@ struct MenuPanel: View {
         .frame(width: 324)
         .background(.background)
         .tint(.accentColor)
-        .onAppear { visible = true }
-        .onDisappear { visible = false }
-        .background(PanelVisibility { visible = $0 })
-        .task(id: visible) {
-            guard visible else { return }
-            // Let presentation/occlusion notifications settle before starting a request.
-            do { try await Task.sleep(for: .milliseconds(200)) } catch { return }
-            await model.connect()
-            while !Task.isCancelled {
-                do { try await Task.sleep(for: .seconds(30)) } catch { return }
-                await model.refresh()
-            }
-        }
     }
 
     private var header: some View {
@@ -88,7 +75,7 @@ struct MenuPanel: View {
                     Menu {
                         ForEach(model.devices) { device in
                             Button {
-                                Task { await model.select(device.id) }
+                                model.select(device.id)
                             } label: {
                                 if device.id == model.selectedID {
                                     Label(device.deviceName, systemImage: "checkmark")
@@ -208,7 +195,7 @@ struct MenuPanel: View {
     private var footer: some View {
         HStack {
             Button {
-                Task { await model.connect(force: model.devices.isEmpty) }
+                model.requestRefresh()
             } label: { Image(systemName: "arrow.clockwise") }
                 .disabled(model.isBusy || model.isRefreshing)
                 .help("Refresh light state")
@@ -218,10 +205,10 @@ struct MenuPanel: View {
                     .font(.caption2).foregroundStyle(.secondary)
             }
             Spacer()
-            SettingsLink { Image(systemName: "gearshape") }
+            Button(action: openSettings) { Image(systemName: "gearshape") }
                 .help("Settings").accessibilityLabel("Settings")
             Menu {
-                Text("Govee Controller 1.0")
+                Text("Govee Controller 1.0.1")
                 Button("Quit Govee Controller") { NSApplication.shared.terminate(nil) }
                     .keyboardShortcut("q")
             } label: { Image(systemName: "ellipsis") }
@@ -230,40 +217,5 @@ struct MenuPanel: View {
         }
         .buttonStyle(.plain)
         .foregroundStyle(.secondary)
-    }
-}
-
-// MenuBarExtra can retain its view while hidden. Observe only this panel's window
-// so another app or the Settings window doesn't start polling in a hidden panel.
-private struct PanelVisibility: NSViewRepresentable {
-    let changed: (Bool) -> Void
-    func makeNSView(context: Context) -> ObserverView { ObserverView(changed: changed) }
-    func updateNSView(_ nsView: ObserverView, context: Context) {}
-
-    final class ObserverView: NSView {
-        let changed: (Bool) -> Void
-        private var tokens: [NSObjectProtocol] = []
-        init(changed: @escaping (Bool) -> Void) {
-            self.changed = changed
-            super.init(frame: .zero)
-        }
-        required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-        override func viewDidMoveToWindow() {
-            super.viewDidMoveToWindow()
-            tokens.forEach(NotificationCenter.default.removeObserver)
-            tokens = []
-            guard let window else { changed(false); return }
-            for name in [NSWindow.didBecomeKeyNotification, NSWindow.didResignKeyNotification,
-                         NSWindow.didChangeOcclusionStateNotification, NSWindow.willCloseNotification] {
-                tokens.append(NotificationCenter.default.addObserver(forName: name, object: window, queue: .main) { [weak self] _ in
-                    MainActor.assumeIsolated { self?.updateVisibility() }
-                })
-            }
-            DispatchQueue.main.async { [weak self] in self?.updateVisibility() }
-        }
-        private func updateVisibility() {
-            changed(window?.isVisible == true && window?.occlusionState.contains(.visible) == true)
-        }
-        isolated deinit { tokens.forEach(NotificationCenter.default.removeObserver) }
     }
 }

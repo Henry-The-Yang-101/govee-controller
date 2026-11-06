@@ -1,4 +1,5 @@
 import Foundation
+import OSLog
 
 actor GoveeClient {
     private struct DeviceList: Decodable { let data: [LightDevice] }
@@ -22,6 +23,7 @@ actor GoveeClient {
     private let spacing: TimeInterval
     private var nextRequests: [String: Date] = [:]
     private var blockedUntil: Date = .distantPast
+    private let logger = Logger(subsystem: "com.henryyang.GoveeController", category: "API")
 
     init(session: URLSession = .shared, spacing: TimeInterval = 7,
          keyProvider: @escaping @Sendable () throws -> String) {
@@ -54,8 +56,15 @@ actor GoveeClient {
         guard !key.isEmpty else { throw GoveeError.missingKey }
         guard Date.now >= blockedUntil else { throw GoveeError.rateLimited }
         // Reserve a slot before suspending, so concurrent UI and intent calls are also spaced.
-        let scheduled = max(Date.now, nextRequests[bucket] ?? .distantPast)
-        nextRequests[bucket] = scheduled.addingTimeInterval(spacing)
+        let previousSlot = nextRequests[bucket]
+        let scheduled = max(Date.now, previousSlot ?? .distantPast)
+        let reservedSlot = scheduled.addingTimeInterval(spacing)
+        nextRequests[bucket] = reservedSlot
+        var sent = false
+        defer {
+            // A popup dismissed during the throttle delay didn't consume an API request.
+            if !sent, nextRequests[bucket] == reservedSlot { nextRequests[bucket] = previousSlot }
+        }
         let delay = scheduled.timeIntervalSinceNow
         if delay > 0 { try await Task.sleep(for: .seconds(delay)) }
         try Task.checkCancellation()
@@ -68,6 +77,9 @@ actor GoveeClient {
             request.httpMethod = "POST"
             request.httpBody = try JSONEncoder().encode(body)
         }
+        // Opt-in debug logging contains no key, device identifier or payload.
+        sent = true
+        logger.debug("Request: \(path, privacy: .public)")
         let (data, response) = try await session.data(for: request)
         guard let http = response as? HTTPURLResponse else { throw GoveeError.malformedResponse }
         let apiCode = (try? JSONDecoder().decode(Envelope.self, from: data))?.code

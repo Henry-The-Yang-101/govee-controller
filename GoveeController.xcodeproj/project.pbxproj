@@ -22,6 +22,8 @@
 		4D9974EF7189E118490E0302 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E4729415CDBE7A8B2134393 /* Cocoa.framework */; };
 		5393EE5E25F2C1F6517BE3CC /* LightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4955C1DBD33544CC0DFB4564 /* LightModel.swift */; };
 		5EDA78169A4C7ADD40E3179C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 785D724BDE7C2A6ADF0E8538 /* Assets.xcassets */; };
+		67CB2797837862F7451F2169 /* VisiblePolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A51378018A05483F3DCE9C /* VisiblePolling.swift */; };
+		846F9F85E2BA2D72F470A7D9 /* VisiblePolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A51378018A05483F3DCE9C /* VisiblePolling.swift */; };
 		9BFE9D43D6B983B2903F3531 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61CF76C1A9491677EDB6BED /* SettingsView.swift */; };
 		9E0F5345D354AF97712D2F7D /* LightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECBCBA7BA425743178A121D /* LightService.swift */; };
 		BA00FB6794CEC63A462F536C /* PowerIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F31C9C20E5B63EDC3212F /* PowerIntent.swift */; };
@@ -56,6 +58,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		06A51378018A05483F3DCE9C /* VisiblePolling.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VisiblePolling.swift; sourceTree = "<group>"; };
 		0E576152E09768AB026064D2 /* GoveeControllerApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GoveeControllerApp.swift; sourceTree = "<group>"; };
 		1E4729415CDBE7A8B2134393 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		3A85D4DB9B442BDED9C2782B /* GoveeController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoveeController.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +102,7 @@
 			children = (
 				5CA97A617ECCF7F6A8BC8533 /* GoveeClient.swift */,
 				4A1850A674C76ABF96169A5A /* Models.swift */,
+				06A51378018A05483F3DCE9C /* VisiblePolling.swift */,
 			);
 			name = Sources/Core;
 			path = Sources/Core;
@@ -279,6 +283,7 @@
 				9E0F5345D354AF97712D2F7D /* LightService.swift in Sources */,
 				BA00FB6794CEC63A462F536C /* PowerIntent.swift in Sources */,
 				01E97AD950C243C84319614A /* SharedStore.swift in Sources */,
+				846F9F85E2BA2D72F470A7D9 /* VisiblePolling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +298,7 @@
 				DCDF2EC24DA8D227164DD2A9 /* LightService.swift in Sources */,
 				CA80B1783CEFD0FC0C3C0558 /* PowerIntent.swift in Sources */,
 				1ADE5496C05AFA169889402D /* SharedStore.swift in Sources */,
+				67CB2797837862F7451F2169 /* VisiblePolling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,14 +323,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8TB23NN2NM;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Config/App-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.henryyang.GoveeController;
 				PRODUCT_NAME = "Govee Controller";
 				SDKROOT = macosx;
@@ -342,14 +348,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8TB23NN2NM;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Config/Controls-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.henryyang.GoveeController.Controls;
 				PRODUCT_NAME = GoveeControls;
 				SDKROOT = macosx;
@@ -482,14 +488,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8TB23NN2NM;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Config/Controls-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.henryyang.GoveeController.Controls;
 				PRODUCT_NAME = GoveeControls;
 				SDKROOT = macosx;
@@ -508,14 +514,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8TB23NN2NM;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Config/App-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.henryyang.GoveeController;
 				PRODUCT_NAME = "Govee Controller";
 				SDKROOT = macosx;

@@ -18,6 +18,9 @@ final class LightModel {
     var colourMode = false
     private var loaded = false
     private var pendingColour: Task<Void, Never>?
+    @ObservationIgnored private lazy var polling = VisiblePolling { [weak self] in
+        await self?.connect()
+    }
 
     init() {
         if let device = SharedStore.selectedDevice, let cached = SharedStore.state(for: device) {
@@ -43,9 +46,20 @@ final class LightModel {
         return "State unavailable"
     }
 
-    func connect(force: Bool = false) async {
-        guard !isRefreshing, !isBusy else { return }
-        if loaded && !force { await refresh(); return }
+    func popupOpened() {
+        if let device, let cached = SharedStore.state(for: device) { apply(cached) }
+        polling.setVisible(true)
+    }
+    func popupClosed() { polling.setVisible(false) }
+
+    func requestRefresh() {
+        if devices.isEmpty { loaded = false }
+        polling.refreshNow()
+    }
+
+    private func connect() async {
+        guard polling.isVisible, !isRefreshing, !isBusy else { return }
+        if loaded { await refresh(); return }
         isRefreshing = true
         defer { isRefreshing = false }
         do {
@@ -61,7 +75,7 @@ final class LightModel {
         } catch is CancellationError {} catch { show(error) }
     }
 
-    func select(_ id: String) async {
+    func select(_ id: String) {
         guard !isBusy else { return }
         pendingColour?.cancel()
         selectedID = id
@@ -70,11 +84,11 @@ final class LightModel {
         error = nil
         if let device, let cached = SharedStore.state(for: device) { apply(cached) }
         ControlCenter.shared.reloadAllControls()
-        await refresh()
+        polling.refreshNow()
     }
 
-    func refresh() async {
-        guard let device, !isBusy, !isRefreshing else { return }
+    private func refresh() async {
+        guard polling.isVisible, let device, !isBusy, !isRefreshing else { return }
         isRefreshing = true
         defer { isRefreshing = false }
         do {
@@ -116,10 +130,20 @@ final class LightModel {
     func saveKey(_ key: String) async throws {
         // Validate before replacing a working credential.
         let client = GoveeClient(keyProvider: { key })
-        _ = try await client.devices()
+        let found = try await client.devices()
         try Keychain.save(key)
-        loaded = false
-        await connect(force: true)
+        SharedStore.devices = found
+        if !found.contains(where: { $0.id == selectedID }) {
+            SharedStore.selectedID = found.first?.id
+            state = nil
+        }
+        devices = found
+        selectedID = SharedStore.selectedID ?? ""
+        loaded = true
+        needsKey = false
+        error = found.isEmpty ? "No compatible lights found on this account." : nil
+        // Settings alone must not start status polling.
+        polling.refreshNow()
     }
 
     private func apply(_ state: DeviceState) {

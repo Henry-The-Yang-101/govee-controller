@@ -1,6 +1,7 @@
 import Foundation
 
 enum SharedStore {
+    static let didChange = Notification.Name("com.henryyang.GoveeController.cachedStateChanged")
     // The team-prefixed macOS App Group needs no provisioning profile.
     static var group: String {
         Bundle.main.object(forInfoDictionaryKey: "GoveeAppGroup") as? String
@@ -13,7 +14,10 @@ enum SharedStore {
     }
     static var selectedID: String? {
         get { defaults.string(forKey: "selectedID") }
-        set { defaults.set(newValue, forKey: "selectedID") }
+        set {
+            defaults.set(newValue, forKey: "selectedID")
+            NotificationCenter.default.post(name: didChange, object: nil)
+        }
     }
     static var selectedDevice: LightDevice? {
         devices.first { $0.id == selectedID }
@@ -23,6 +27,7 @@ enum SharedStore {
     }
     static func save(_ state: DeviceState, for device: LightDevice) {
         encode(state, key: "state.\(device.id)")
+        NotificationCenter.default.post(name: didChange, object: nil)
     }
     private static func decode<T: Decodable>(_ type: T.Type, key: String) -> T? {
         guard let data = defaults.data(forKey: key) else { return nil }

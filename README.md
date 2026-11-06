@@ -12,7 +12,13 @@ Click the lightbulb in the menu bar to open the 324-point-wide panel:
 - Adjust brightness, white temperature, a colour preset, or a custom colour.
 - Use Refresh for a fresh reading, or Settings to change the API key and opt into opening at login.
 
-The panel queries state while visible, every 30 seconds. Controls show the last confirmed reading;
+The panel refreshes when opened, then every 30 seconds while open. Closing it immediately cancels
+the polling task, including an in-flight status request. There is no idle polling or timer while closed.
+Commands requested by the user (including Control Center actions) still finish their state confirmation.
+The menu bar lightbulb is filled when the selected light's last reported state was on, and outlined
+when off or unknown. It uses the local cache and does not make additional requests.
+
+Controls show the last confirmed reading;
 a command is verified by querying the device state rather than treating an HTTP success as confirmation.
 Govee's cloud state can lag behind changes made over Bluetooth in Govee Home.
 
@@ -70,15 +76,18 @@ failure. If the process is interrupted or the network goes down, use that snapsh
 The API limits requests, so do not run multiple diagnostic processes at once.
 
 For UI inspection tools that require a regular window, quit the app and launch it with
-`open '/Applications/Govee Controller.app' --args --preview-panel`. This opens the exact same panel
-in a temporary inspection window. Ordinary launches suppress that window.
+`open '/Applications/Govee Controller.app' --args --show-settings`. The application menu's
+**Show Light Controls** command opens the actual popover anchored to the status item. The icon must
+be visible in the menu bar (not hidden by an overflow utility or full-screen mode).
 
 ## Implementation
 
-- `Sources/Core`: API client, capability bounds, typed state decoding, request throttling and errors.
+- `Sources/Core`: API client, capability bounds, typed state decoding, request throttling, errors,
+  and a visibility-scoped polling task.
 - `Sources/Shared`: selected light/state in a macOS App Group, Keychain access, command confirmation,
   and the power App Intent.
-- `Sources/App`: SwiftUI `MenuBarExtra` panel, Settings, and opt-in diagnostics.
+- `Sources/App`: an AppKit status item and transient popover hosting SwiftUI controls, Settings,
+  and opt-in diagnostics. The popover's show/close callbacks own the polling lifecycle.
 - `Sources/Controls`: two WidgetKit `ControlWidgetButton` controls.
 
 Requests are spaced at least seven seconds apart per operation type and device. HTTP 429/API rate-limit

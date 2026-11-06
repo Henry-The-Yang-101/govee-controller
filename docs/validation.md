@@ -1,5 +1,30 @@
 # Installation and verification
 
+## Popup fix and idle polling (1.0.1)
+
+Verified on November 6, 2026 (America/Toronto):
+
+- Replaced the retained SwiftUI menu scene and indirect window-visibility observer with an
+  AppKit status item and reusable transient popover, still hosting the same SwiftUI controls.
+- The user confirmed that clicking outside and reopening now works. Debug logs recorded four
+  actual open/close cycles from 00:05:20 through 00:05:29.
+- No further status requests came from that running application after the last close, through
+  the next installation roughly two minutes later. Separate diagnostic processes were excluded.
+- Polling begins on show and is cancelled on close, including any pending throttle delay or
+  in-flight status request. Reopening waits for cancellation to finish before starting a new loop.
+- Twelve tests passed, including four new lifecycle regressions: no work while closed, periodic
+  work stopping/resuming, duplicate open notifications, and cancellation during rapid reopening.
+- The menu icon now reflects the selected light's cached state (filled for on, outlined otherwise).
+  Cache-write notifications update it after panel and Control Center commands without network polling.
+- Rechecked the existing **Lamp On** Control Center button against the AppKit application:
+  the running app sent the command and read state, and a subsequent read confirmed on, 100%, 3700 K.
+
+The automation session's hidden status-item anchor prevented it from directly opening the popover;
+the successful physical reopen check above was performed by the user and corroborated by lifecycle logs.
+Debug logs include endpoint names and lifecycle events only, never credentials or device IDs.
+
+## Initial release (1.0.0)
+
 Verified on November 5, 2026 (America/Toronto), using the installed release at
 `/Applications/Govee Controller.app` on macOS 27.0.1. The app targets macOS 26 or later;
 macOS 26 was not separately tested.
